@@ -1,0 +1,19 @@
+<div
+  *ngIf="!!cartProduct?.length; else emptyCart"
+  class='cart' >
+  <h3>cart list</h3>
+ <div *ngFor="let product of cartProduct; let i = index  trackBy: trackByItems"
+      class="cart-list"
+ >
+   <p>{{i + 1}}</p>
+   <p>{{product.title}}</p>
+   <p>1</p>
+   <p>{{product.price}}</p>
+ </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="cart">
+    <h3>{{EMPTY_CART}}</h3>
+  </div>
+</ng-template>

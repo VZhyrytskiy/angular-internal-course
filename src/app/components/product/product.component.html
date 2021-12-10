@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="photo">
+    <img class="image" [src]="product.image" alt="'product image'">
+  </div>
+  <div class="main">
+    <div class="information">
+      <p class="category">{{changeCategory(product.category)}}</p>
+      <p class="title">{{product.title}}</p>
+      <p class="price">{{product.price | currency : '$' }}</p>
+    </div>
+    <div class="buttons">
+      <button class="button" (click)="onAddToCart()">add to cart</button>
+    </div>
+  </div>
+</div>
