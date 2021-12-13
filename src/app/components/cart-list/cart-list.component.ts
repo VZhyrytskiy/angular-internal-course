@@ -8,18 +8,18 @@ import { IProduct } from '../../services/types';
   styleUrls: ['./cart-list.component.scss']
 })
 export class CartListComponent implements OnInit {
-  cartProduct: IProduct[]
-  EMPTY_CART = 'Empty cart'
+  cartProduct: IProduct[];
+  EMPTY_CART = 'Empty cart';
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-   this.cartProduct =  this.cartService.getCartProducts()
-    console.log(this.cartProduct)
+   this.cartProduct =  this.cartService.getCartProducts();
+    console.log(this.cartProduct);
   }
 
   trackByItems(index:number, el: IProduct): number {
-    return el.id
+    return el.id;
   }
 
 }

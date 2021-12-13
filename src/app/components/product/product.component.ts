@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onAddToCart() {
+  onAddToCart(): void {
     console.log('Item purchased')
   }
 
