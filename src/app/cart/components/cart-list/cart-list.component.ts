@@ -29,20 +29,20 @@ export class CartListComponent implements OnInit {
   public onIncrease(cartProduct: any): void {
     this.cartService.increase(
       this.cartService.findIndex(cartProduct)
-    )
+    );
   }
 
   public onDecrease(cartProduct:any): void {
     if(cartProduct.quantity <= 0) {
-      return
+      return;
     }
     this.cartService.decrease(
       this.cartService.findIndex(cartProduct)
-    )
+    );
   }
 
   public onDeleteItem(cartProduct: any): void {
-    this.cartService.deleteCartItem(cartProduct)
-    this.cartProduct = this.cartService.getCartProducts()
+    this.cartService.deleteCartItem(cartProduct);
+    this.cartProduct = this.cartService.getCartProducts();
   }
 }

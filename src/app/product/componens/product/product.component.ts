@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../../shared/types';
-import { ECategory } from '../../../shared/category';
 
 
 @Component({
@@ -9,16 +8,12 @@ import { ECategory } from '../../../shared/category';
   styleUrls: ['./product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductComponent implements OnInit {
-  OUT_OF_STOCK = 'out of stock'
+export class ProductComponent {
+  OUT_OF_STOCK = 'out of stock';
   @Input() product!: IProduct;
   @Output() addToCart: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
-  constructor() { }
-
-  ngOnInit(): void {}
-
-  onAddToCart() {
+  onAddToCart(): void {
     this.addToCart.emit(this.product)
   }
 }

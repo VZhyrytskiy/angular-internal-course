@@ -16,12 +16,12 @@ export class AppComponent implements AfterViewInit, AfterContentChecked {
     public cartService: CartService
   ){}
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.appTitle.nativeElement.innerHTML = `<h1>${this.TITLE}</h1>`;
 
   }
 
-  ngAfterContentChecked() {
+  ngAfterContentChecked(): void {
     this.isEmptyCart = !!this.cartService.getCartSum()
   }
 }

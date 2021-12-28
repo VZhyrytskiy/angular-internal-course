@@ -12,51 +12,51 @@ export class CartService {
     return this._isCartListShown
   }
 
-  constructor() { }
-
-  public getCartProducts(): ICartProduct[] | []  {
-    return this.products
+  getCartProducts(): ICartProduct[] | []  {
+    return this.products;
   }
 
 
-  public addToCart(productItem: ICartProduct): void {
+  addToCart(productItem: ICartProduct): void {
     const index = this.findIndex(productItem);
       index < 0
         ? this.products.push(productItem)
         : this.increase(index);
   }
 
-  public increase(index: number): void {
-    this.products[index].quantity++
+  increase(index: number): void {
+    this.products[index].quantity++;
   }
 
-  public decrease(index: number): void {
-    this.products[index].quantity--
+  decrease(index: number): void {
+    // например, тут мутация
+    this.products[index].quantity--;
   }
 
-  public findIndex(cartProduct: ICartProduct): number {
-    return this.products.findIndex(product => product.id === cartProduct.id)
+  findIndex(cartProduct: ICartProduct): number {
+    return this.products.findIndex(product => product.id === cartProduct.id);
   }
 
-  public deleteCartItem(productItem: ICartProduct) {
+  deleteCartItem(productItem: ICartProduct) {
+    // например, тут пересоздание, если использовать мутацию, то метод splice
     this.products = this.products.filter(product => product.id !== productItem.id);
   }
 
-  public getCartSum(): number {
+  getCartSum(): number {
     return this.products.reduce((calc: number, cur: ICartProduct) => {
       calc += cur.quantity * cur.price
       return calc
-    }, 0)
+    }, 0);
   }
 
-  public toggleCartList(): void {
-    this._isCartListShown = !this._isCartListShown
+  toggleCartList(): void {
+    this._isCartListShown = !this._isCartListShown;
   }
 
-  public getNumberPurchases(): number {
+  getNumberPurchases(): number {
     return this.products.reduce((calc: number, cur: ICartProduct) => {
       calc += cur.quantity
       return calc
-    }, 0)
+    }, 0);
   }
 }
