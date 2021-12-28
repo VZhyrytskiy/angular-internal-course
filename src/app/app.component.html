@@ -1,5 +1,13 @@
+<div class="header">
+  <div  #appTitle>
+  </div>
+
+  <div zoom class="cart-icon-wrapper" (click)="cartService.toggleCartList()">
+    <i *ngIf="!isEmptyCart" class="fas fa-shopping-cart"></i>
+    <i *ngIf="isEmptyCart" class="fas fa-cart-arrow-down"></i>
+  </div>
+</div>
 <div class="main-wrapper">
-  <!--<app-first></app-first>-->
-  <app-product-list></app-product-list>
-  <app-cart-list></app-cart-list>
+  <app-product-list ></app-product-list>
+  <app-cart-list *ngIf="cartService.isCartListShown"></app-cart-list>
 </div>

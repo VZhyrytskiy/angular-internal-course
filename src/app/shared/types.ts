@@ -8,6 +8,7 @@ export interface IProduct {
   category: any;
   image: string;
   rating: IRating;
+  isAvailable: boolean
 }
 
 export interface IRating {
@@ -15,4 +16,7 @@ export interface IRating {
   count: number;
 }
 
+export interface ICartProduct extends  IProduct {
+  quantity: number;
+}
 export type TCategory =  "mensClothing" | "jewelery" | "electronics" | "womensClothing"

@@ -1,0 +1,41 @@
+<div class="cart-item">
+  <div class="cart-delete-button">
+    <div zoom class="material-icons"
+      (click)="deleteItem()"
+    >
+     <i class="fas fa-trash-alt"></i>
+    </div>
+  </div>
+
+  <div class="cart-item-photo">
+    <img class="cart-item-image" [src]="product.image" alt="'product image'">
+  </div>
+
+  <div class="cart-title">
+    {{product.title}}
+  </div>
+
+  <div class="cart-quantity">
+    <div zoom class="material-icons"
+      (click)="decreaseItem()"
+    >
+      <i class="fas fa-minus-circle"></i>
+    </div>
+
+    <p class="cart-item-quantity-counter">
+      {{product.quantity}}
+    </p>
+
+    <div zoom
+      class="material-icons"
+      (click)="increaseItem()"
+    >
+     <i class="fas fa-plus-circle"></i>
+
+    </div>
+  </div>
+
+  <div class="cart-item-price">
+    {{getProductCount(product.price, product.quantity) | currency}}
+  </div>
+</div>

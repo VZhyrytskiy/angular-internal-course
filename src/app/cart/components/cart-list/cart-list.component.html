@@ -1,0 +1,32 @@
+<div *ngIf="!!cartProduct?.length; else emptyCart"
+  class='cart'
+>
+  <div class="cart-list-header">
+    <h3 class="title">{{PURCHASE_AMOUNT}}</h3>
+    <div class="cart-item-price">{{ cartService.getCartSum() | currency }}</div>
+  </div>
+
+  <div class="cart-list-header">
+    <h3 class="title">{{ NUMBER_OF_PURCHASE }}</h3>
+    <div class="cart-item-price">{{ cartService.getNumberPurchases() }}</div>
+  </div>
+
+ <div *ngFor="let product of cartProduct; let i = index  trackBy: trackByItems"
+      class="cart-list"
+ >
+   <app-cart-item
+   [product]="product"
+   (increase)="onIncrease($event)"
+   (decrease)="onDecrease($event)"
+   (delete)="onDeleteItem($event)"
+   >
+
+   </app-cart-item>
+ </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="cart cart-list-header">
+    <h3>{{EMPTY_CART}}</h3>
+  </div>
+</ng-template>

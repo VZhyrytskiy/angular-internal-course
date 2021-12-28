@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { IProduct } from '../../services/types';
+import { IProduct } from '../../../shared/types';
 
 @Component({
   selector: 'app-product-list',
@@ -16,4 +16,7 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  onAddToCart($event: any): void {
+    this.productService.addToCart($event)
+  }
 }

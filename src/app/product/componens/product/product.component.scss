@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
 * { box-sizing: border-box; }
 
+
 .card {
   font-family: "Raleway", sans-serif;
   width: 600px;
@@ -86,4 +87,9 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-around;
+}
+
+.out-of-stock {
+  @extend .title;
+  color: red ;
 }

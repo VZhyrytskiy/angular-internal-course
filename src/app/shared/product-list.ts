@@ -9,7 +9,8 @@ export default [
       rating: {
         rate: 3.9,
         count: 120
-      }
+      },
+      isAvailable: true
     },
     {
       id: 2,
@@ -21,7 +22,8 @@ export default [
       rating: {
         rate: 4.1,
         count: 259
-      }
+      },
+      isAvailable: true
     },
     {
       id: 3,
@@ -33,7 +35,8 @@ export default [
       rating: {
         rate: 4.7,
         count: 500
-      }
+      },
+      isAvailable: true
     },
     {
       id: 4,
@@ -45,7 +48,8 @@ export default [
       rating: {
         rate: 2.1,
         count: 430
-      }
+      },
+      isAvailable: false
     },
     {
       id: 5,
@@ -57,7 +61,8 @@ export default [
       rating: {
         rate: 4.6,
         count: 400
-      }
+      },
+      isAvailable: true
     },
     {
       id: 6,
@@ -69,7 +74,8 @@ export default [
       rating: {
         rate: 3.9,
         count: 70
-      }
+      },
+      isAvailable: false
     },
     {
       id: 7,
@@ -81,7 +87,8 @@ export default [
       rating: {
         rate: 3,
         count: 400
-      }
+      },
+      isAvailable: true
     },
     {
       id: 8,
@@ -93,7 +100,8 @@ export default [
       rating: {
         rate: 1.9,
         count: 100
-      }
+      },
+      isAvailable: true
     },
     {
       id: 9,
@@ -105,7 +113,8 @@ export default [
       rating: {
         rate: 3.3,
         count: 203
-      }
+      },
+      isAvailable: false
     },
     {
       id: 10,
@@ -117,7 +126,8 @@ export default [
       rating: {
         rate: 2.9,
         count: 470
-      }
+      },
+      isAvailable: true
     },
     {
       id: 11,
@@ -129,7 +139,8 @@ export default [
       rating: {
         rate: 4.8,
         count: 319
-      }
+      },
+      isAvailable: true
     },
     {
       id: 12,
@@ -141,7 +152,8 @@ export default [
       rating: {
         rate: 4.8,
         count: 400
-      }
+      },
+      isAvailable: true
     },
     {
       id: 13,
@@ -153,7 +165,8 @@ export default [
       rating: {
         rate: 2.9,
         count: 250
-      }
+      },
+      isAvailable: true
     },
     {
       id: 14,
@@ -165,7 +178,8 @@ export default [
       rating: {
         rate: 2.2,
         count: 140
-      }
+      },
+      isAvailable: true
     },
     {
       id: 15,
@@ -177,7 +191,8 @@ export default [
       rating: {
         rate: 2.6,
         count: 235
-      }
+      },
+      isAvailable: true
     },
     {
       id: 16,
@@ -189,7 +204,8 @@ export default [
       rating: {
         rate: 2.9,
         count: 340
-      }
+      },
+      isAvailable: true
     },
     {
       id: 17,
@@ -201,7 +217,8 @@ export default [
       rating: {
         rate: 3.8,
         count: 679
-      }
+      },
+      isAvailable: true
     },
     {
       id: 18,
@@ -213,7 +230,8 @@ export default [
       rating: {
         rate: 4.7,
         count: 130
-      }
+      },
+      isAvailable: true
     },
     {
       id: 19,
@@ -225,7 +243,8 @@ export default [
       rating: {
         rate: 4.5,
         count: 146
-      }
+      },
+      isAvailable: true
     },
     {
       id: 20,
@@ -237,6 +256,7 @@ export default [
       rating: {
         rate: 3.6,
         count: 145
-      }
+      },
+      isAvailable: true
     }
 ]

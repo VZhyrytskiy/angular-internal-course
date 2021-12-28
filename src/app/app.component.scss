@@ -2,3 +2,20 @@
   display: flex;
   justify-content: space-between;
 }
+
+.header {
+  background-color: #FAEBD7;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.fas {
+  font-size: 40px;
+  cursor: pointer;
+}
