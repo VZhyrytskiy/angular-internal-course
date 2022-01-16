@@ -1,4 +1,3 @@
-import { ECategory } from './category';
 
 export interface IProduct {
   id: number;
@@ -16,7 +15,7 @@ export interface IRating {
   count: number;
 }
 
-export interface ICartProduct extends  IProduct {
+export interface ICartProduct extends IProduct {
   quantity: number;
 }
 export type TCategory =  "mensClothing" | "jewelery" | "electronics" | "womensClothing"

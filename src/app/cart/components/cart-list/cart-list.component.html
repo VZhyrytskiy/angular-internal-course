@@ -3,12 +3,12 @@
 >
   <div class="cart-list-header">
     <h3 class="title">{{PURCHASE_AMOUNT}}</h3>
-    <div class="cart-item-price">{{ cartService.getCartSum() | currency }}</div>
+    <div class="cart-item-price">{{ cartService.totalSum | currency }}</div>
   </div>
 
   <div class="cart-list-header">
     <h3 class="title">{{ NUMBER_OF_PURCHASE }}</h3>
-    <div class="cart-item-price">{{ cartService.getNumberPurchases() }}</div>
+    <div class="cart-item-price">{{ cartService.totalQuantity }}</div>
   </div>
 
  <div *ngFor="let product of cartProduct; let i = index  trackBy: trackByItems"
@@ -23,6 +23,12 @@
 
    </app-cart-item>
  </div>
+  <div class="buttons">
+    <button class="button"
+            (click)="removeAllProducts()"
+    >delete all products
+    </button>
+  </div>
 </div>
 
 <ng-template #emptyCart>

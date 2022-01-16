@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProduct } from '../../../shared/types';
-import { ECategory } from '../../../shared/category';
 
 
 @Component({

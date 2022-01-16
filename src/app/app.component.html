@@ -1,10 +1,14 @@
 <div class="header">
-  <div  #appTitle>
+  <div #appTitle>
+  </div>
+
+  <div zoom [appColory]="'yellow'" class="generated-string" >
+    {{generatedString}}
   </div>
 
   <div zoom class="cart-icon-wrapper" (click)="cartService.toggleCartList()">
-    <i *ngIf="!isEmptyCart" class="fas fa-shopping-cart"></i>
-    <i *ngIf="isEmptyCart" class="fas fa-cart-arrow-down"></i>
+    <i *ngIf="!cartService.isEmptyCart" class="fas fa-shopping-cart"></i>
+    <i *ngIf="cartService.isEmptyCart" class="fas fa-cart-arrow-down"></i>
   </div>
 </div>
 <div class="main-wrapper">

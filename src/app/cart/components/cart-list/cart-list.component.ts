@@ -11,7 +11,7 @@ import { ICartProduct, IProduct } from '../../../shared/types';
 export class CartListComponent implements OnInit {
   cartProduct!: ICartProduct[];
   EMPTY_CART = 'Empty cart';
-  PURCHASE_AMOUNT = 'Purchase amount';
+  PURCHASE_AMOUNT = 'Total quantity';
   NUMBER_OF_PURCHASE = 'Number of purchases'
 
   constructor(
@@ -27,12 +27,12 @@ export class CartListComponent implements OnInit {
   }
 
   public onIncrease(cartProduct: any): void {
-    this.cartService.increase(
+    this.cartService.increaseQuantity(
       this.cartService.findIndex(cartProduct)
     )
   }
 
-  public onDecrease(cartProduct:any): void {
+  public onDecrease(cartProduct: any): void {
     if(cartProduct.quantity <= 0) {
       return
     }
@@ -41,8 +41,13 @@ export class CartListComponent implements OnInit {
     )
   }
 
-  public onDeleteItem(cartProduct: any): void {
-    this.cartService.deleteCartItem(cartProduct)
+  public onDeleteItem(cartProduct: any ): void {
+    this.cartService.removeProduct(cartProduct)
+    this.cartProduct = this.cartService.getCartProducts()
+  }
+
+  public removeAllProducts(): void {
+    this.cartService.removeAllProducts()
     this.cartProduct = this.cartService.getCartProducts()
   }
 }

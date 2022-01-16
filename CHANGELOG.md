@@ -29,3 +29,14 @@
 - quantity and amount of product
 - zoom the cart icon on the hover
 
+# Task 3
+
+### Created:
+
+- ConfigOptionsService
+- ConstantsService as token
+- GeneratorService
+- GeneratorFactory
+- LocalStorageService as token
+- colored directive
+- removeAllProducts method in cart service
