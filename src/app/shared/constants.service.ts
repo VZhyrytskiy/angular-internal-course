@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
-@Injectable()
+// @Injectable()
 export class ConstantsService {
-  app = "";
-  ver = "";
-  url = "";
-  constructor() { }
+  // app = "";
+  // ver = "";
+  // url = "";
+  // constructor() { }
 }

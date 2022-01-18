@@ -7,7 +7,7 @@ import { GeneratorFactory } from './generator.factory';
 import { GeneratorService } from './generator.service';
 import { ColoryDirective } from './colory.directive';
 
-const FACE_SHOP_CONST: ConstantsService = {
+const FACE_SHOP_CONST = {
   app: "Fake store",
   ver: "1.0",
   url: "https://fakestoreapi.com/products"
@@ -35,6 +35,9 @@ export const COLOR_ARR = new InjectionToken<string>('colorArr')
     CategoryPipe,
     ColoryDirective
   ],
+  // не рекомендуется регистрировать на shared модуле провайдеры,
+  // так как этот модуль предназначен для декларирования компонент, директив и пайпов.
+  // Если такой модуль подключать к лейзи модулям, то будем получать несколько экземпляров сервисов.
   providers: [
     { provide: ConstantsService, useValue: FACE_SHOP_CONST },
     { provide: TITLE, useValue:  FACE_SHOP_CONST.app},

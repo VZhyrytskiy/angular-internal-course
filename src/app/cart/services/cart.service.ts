@@ -32,6 +32,7 @@ export class CartService {
 
   constructor() { }
 
+  // модификатор public не нужно писать
   public getCartProducts(): ICartProduct[] | []  {
     return this._cartProducts
   }
