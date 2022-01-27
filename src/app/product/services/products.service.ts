@@ -13,7 +13,6 @@ export class ProductsService {
     private cartService: CartService,
     private constantService: ConstantsService
   ) {
-    console.log('URL', this.constantService.url)
   }
 
   public getProducts(): IProduct[] {

@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
     BrowserModule,
     ProductModule,
     CartModule,

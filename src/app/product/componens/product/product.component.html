@@ -9,6 +9,11 @@
       <p class="price">{{product.price | currency : '$' }}</p>
     </div>
     <div class="buttons">
+      <div class="rating">
+        {{ 'rating:' }}
+        {{ product.rating}}
+      </div>
+
       <button *ngIf="product.isAvailable else notAvailable"
               class="button"
               (click)="onAddToCart()"

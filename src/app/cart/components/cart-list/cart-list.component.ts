@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { ICartProduct, IProduct } from '../../../shared/types';
+import { ICartProduct, IProduct, TFilterNames, TFilterNamesCart } from '../../../shared/types';
+import { SortService } from '../../../shared/sort.service';
 
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.scss']
+  styleUrls: ['./cart-list.component.scss'],
+  providers: [ SortService ]
 })
 export class CartListComponent implements OnInit {
   cartProduct!: ICartProduct[];
+  filterNameArr: TFilterNamesCart[] = ['price', 'rating', 'category', 'quantity'];
+
   EMPTY_CART = 'Empty cart';
   PURCHASE_AMOUNT = 'Total quantity';
   NUMBER_OF_PURCHASE = 'Number of purchases'
 
   constructor(
-    public cartService: CartService
+    public cartService: CartService,
+    public sortService: SortService
   ) { }
 
   ngOnInit(): void {

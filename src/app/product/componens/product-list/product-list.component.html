@@ -1,6 +1,6 @@
-<div>
+<div *ngIf="sortService.selectedFilter$ | async as selectedFilter">
   <app-product
-    *ngFor="let product of products"
+    *ngFor="let product of products | orderByPipe : selectedFilter"
     [product]="product"
     (addToCart)="onAddToCart($event)"
   ></app-product>

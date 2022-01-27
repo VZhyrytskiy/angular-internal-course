@@ -2,6 +2,10 @@
   <div #appTitle>
   </div>
 
+  <app-sort-filter
+    [filterNameArr]='filterNameArr'
+  ></app-sort-filter>
+
   <div zoom [appColory]="'yellow'" class="generated-string" >
     {{generatedString}}
   </div>
@@ -15,3 +19,5 @@
   <app-product-list ></app-product-list>
   <app-cart-list *ngIf="cartService.isCartListShown"></app-cart-list>
 </div>
+<pre>
+</pre>

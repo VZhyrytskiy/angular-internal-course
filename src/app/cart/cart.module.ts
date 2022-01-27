@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [ CartListComponent, CartItemComponent ],
-  imports: [CommonModule, SharedModule ],
+  imports: [ CommonModule, SharedModule ],
   exports: [ CartListComponent, CartItemComponent]
 })
 export class CartModule { }

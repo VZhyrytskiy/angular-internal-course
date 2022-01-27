@@ -40,3 +40,9 @@
 - LocalStorageService as token
 - colored directive
 - removeAllProducts method in cart service
+
+# Task 4
+
+### Created: OrderByPipe
+
+- pipe applied for product-list and cart-list

@@ -6,6 +6,10 @@ import { ConstantsService } from './constants.service';
 import { GeneratorFactory } from './generator.factory';
 import { GeneratorService } from './generator.service';
 import { ColoryDirective } from './colory.directive';
+import { SortFilterComponent } from './sort-filter/sort-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SortService } from './sort.service';
+import { OrderByPipe } from './order-by.pipe';
 
 const FACE_SHOP_CONST: ConstantsService = {
   app: "Fake store",
@@ -25,22 +29,28 @@ export const COLOR_ARR = new InjectionToken<string>('colorArr')
   declarations: [
     ZoomDirective,
     CategoryPipe,
-    ColoryDirective
+    ColoryDirective,
+    OrderByPipe,
+    SortFilterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     ZoomDirective,
     CategoryPipe,
-    ColoryDirective
+    ColoryDirective,
+    OrderByPipe,
+    SortFilterComponent
   ],
   providers: [
     { provide: ConstantsService, useValue: FACE_SHOP_CONST },
     { provide: TITLE, useValue:  FACE_SHOP_CONST.app},
     { provide: GENERATED_STRING, useFactory: GeneratorFactory(10), deps: [GeneratorService] },
     { provide: LOCAL_STORAGE, useValue: localStorage },
-    { provide: COLOR_ARR, useValue: colorArr }
+    { provide: COLOR_ARR, useValue: colorArr },
+    SortService
   ]
 })
 export class SharedModule { }

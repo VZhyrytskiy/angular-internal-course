@@ -11,18 +11,26 @@
     <div class="cart-item-price">{{ cartService.totalQuantity }}</div>
   </div>
 
- <div *ngFor="let product of cartProduct; let i = index  trackBy: trackByItems"
-      class="cart-list"
- >
-   <app-cart-item
-   [product]="product"
-   (increase)="onIncrease($event)"
-   (decrease)="onDecrease($event)"
-   (delete)="onDeleteItem($event)"
+  <div class="cart-list-header">
+    <app-sort-filter
+      [filterNameArr]='filterNameArr'
+    ></app-sort-filter>
+  </div>
+  <ng-container *ngIf="sortService.selectedFilter$ | async as selectedFilter">
+   <div *ngFor="let product of cartProduct | orderByPipe : selectedFilter; let i = index  trackBy: trackByItems"
+        class="cart-list"
    >
+     <app-cart-item
+       [product]="product"
+       (increase)="onIncrease($event)"
+       (decrease)="onDecrease($event)"
+       (delete)="onDeleteItem($event)"
+     >
 
-   </app-cart-item>
- </div>
+     </app-cart-item>
+   </div>
+  </ng-container>
+
   <div class="buttons">
     <button class="button"
             (click)="removeAllProducts()"

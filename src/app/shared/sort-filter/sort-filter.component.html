@@ -1,0 +1,23 @@
+<form [formGroup]="sortFilterForm" class="filters">
+  <div class="filters-container">
+    <div class="select-container">
+      <div class="select-wrapper">
+        <select class="select" formControlName = "filter">
+          <option *ngFor="let filterName of filterNameArr" [ngValue]="filterName">
+            {{filterName}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="radio-container center">
+    <input formControlName="sort" type="radio" id="sort-increase" name="sort" [value]="true">
+    <label for="sort-increase">increase</label>
+  </div>
+
+  <div class="radio-container center">
+    <input formControlName ="sort" type="radio" id="sort-decrease" name="sort" [value]="false">
+    <label for="sort-decrease">decrease</label>
+  </div>
+</form>

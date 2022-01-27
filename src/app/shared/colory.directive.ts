@@ -12,9 +12,7 @@ export class ColoryDirective implements OnInit{
     private renderer: Renderer2,
     private element: ElementRef,
     @Inject(COLOR_ARR) private colorArr: string[]
-  ) {
-    console.log('appColory')
-  }
+  ) {}
 
   ngOnInit() {
     this.setColor(this.defaultColor)

@@ -22,7 +22,7 @@ export class CartService {
   get totalSum(): number {
     return this._cartProducts.reduce((calc: number, cur: ICartProduct) => {
       calc += cur.quantity * cur.price
-      return calc
+      return +calc.toFixed(2)
     }, 0)
   }
 
