@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // тут хотелось бы увидеть асинхронный подход, согласно пункту 2 из задания
     this.products = this.productService.getProducts();
     // this.sortService.selectedFilter$.subscribe(res => console.log(res))
   }
